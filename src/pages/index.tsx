@@ -65,11 +65,11 @@ const Home: NextPage = () => {
             Search
           </Button>
           <Button onClick={toggleColorMode}>
-            {colorMode === "dark" ? <Icon.Moon /> : <Icon.Sun />}
+            {colorMode === "dark" ? <Icon.Sun /> : <Icon.Moon />}
           </Button>
         </Flex>
       </Flex>
-      {results.length > 0 && (results.map((result: string) => <p>{result}</p>))}
+      {results.length > 0 && results.map((result: string) => <p>{result}</p>)}
 
       {/* <footer className={styles.footer}>
         <a
