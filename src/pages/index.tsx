@@ -50,7 +50,9 @@ const Home: NextPage = () => {
         <Flex direction="column" background={formBackground} p={12} rounded={6}>
           <Heading mb={6}>Thai Regex Dict</Heading>
           <InputGroup>
-            <InputLeftElement pointerEvents="none" children={<Icon.Search />} />
+            <InputLeftElement pointerEvents="none">
+              <Icon.Search />
+            </InputLeftElement>
             <Input
               placeholder="ค้นหา..."
               mb={3}
@@ -74,7 +76,7 @@ const Home: NextPage = () => {
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <Heading mb={6}>พบ {results.length} คำ</Heading>
           {results.map((result: string) => (
-            <p>{result}</p>
+            <p key={result}>{result}</p>
           ))}
           <ScrollButton />
           <Flex justifyContent="center" mt={6}>
