@@ -5,14 +5,25 @@ import Head from "next/head";
 // import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
-import { Button, Flex, Heading, Input, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Heading,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
+
+import * as Icon from "react-feather";
 
 import ThaiWordlist from "../common/thai-wordlist.json";
 
 const Home: NextPage = () => {
   const [value, setValue] = useState<string>("");
 
-  const { toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
   const formBackground = useColorModeValue("gray.100", "gray.700");
 
   const search = () => {
@@ -25,47 +36,36 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>Thai Regex Dict</title>
-        <meta name="description" content="Thai Regex Dictionary | พจนานุกรมนิพจน์ปรกติ" />
+        <meta
+          name="description"
+          content="Thai Regex Dictionary | พจนานุกรมนิพจน์ปรกติ"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Flex height="100vh" alignItems="center" justifyContent="center">
         <Flex direction="column" background={formBackground} p={12} rounded={6}>
           <Heading mb={6}>Thai Regex Dict</Heading>
-          <Input
-            placeholder="ค้นหา..."
-            mb={3}
-            type="text"
-            value={value}
-            onChange={(e) => {
-              setValue(e.currentTarget.value);
-            }}
-          />
+          <InputGroup>
+            <InputLeftElement pointerEvents="none" children={<Icon.Search />} />
+            <Input
+              placeholder="ค้นหา..."
+              mb={3}
+              type="text"
+              value={value}
+              onChange={(e) => {
+                setValue(e.currentTarget.value);
+              }}
+            />
+          </InputGroup>
           <Button mb={6} colorScheme="teal" onClick={search}>
             Search
           </Button>
-          <Button onClick={toggleColorMode}>Dark/Light</Button>
+          <Button onClick={toggleColorMode}>
+            {colorMode === "dark" ? <Icon.Moon /> : <Icon.Sun />}
+          </Button>
         </Flex>
       </Flex>
-
-      {/* <main className={styles.main}>
-        <h1 className={styles.title}>Thai Regex Dict</h1>
-
-        <div>
-          <input
-            className={styles.description}
-            type="text"
-            value={value}
-            onChange={(e) => {
-              setValue(e.currentTarget.value);
-            }}
-            // onKeyUp={}
-          ></input>
-          <button className={styles.description} onClick={search}>
-            Search
-          </button>
-        </div>
-      </main> */}
 
       {/* <footer className={styles.footer}>
         <a
