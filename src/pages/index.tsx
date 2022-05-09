@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import type { NextPage } from "next";
 import Head from "next/head";
-// import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 import {
@@ -18,6 +17,7 @@ import {
 
 import * as Icon from "react-feather";
 
+import ScrollButton from "../components/ScrollButton";
 import ThaiWordlist from "../common/thaidict.json";
 
 const Home: NextPage = () => {
@@ -69,20 +69,23 @@ const Home: NextPage = () => {
           </Button>
         </Flex>
       </Flex>
-      {results.length > 0 && results.map((result: string) => <p>{result}</p>)}
 
-      {/* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer> */}
+      {results.length > 0 && (
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+          <Heading mb={6}>พบ {results.length} คำ</Heading>
+          {results.map((result: string) => (
+            <p>{result}</p>
+          ))}
+          <ScrollButton />
+          <Flex justifyContent="center" mt={6}>
+            <Icon.GitHub
+              onClick={() => {
+                window.open("https://github.com/richeyphu/thai-regex-dict");
+              }}
+            />
+          </Flex>
+        </div>
+      )}
     </div>
   );
 };
