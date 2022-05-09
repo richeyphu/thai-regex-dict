@@ -18,17 +18,20 @@ import {
 
 import * as Icon from "react-feather";
 
-import ThaiWordlist from "../common/thai-wordlist.json";
+import ThaiWordlist from "../common/thaidict.json";
 
 const Home: NextPage = () => {
   const [value, setValue] = useState<string>("");
+  const [results, setResults] = useState<string[]>([]);
 
   const { colorMode, toggleColorMode } = useColorMode();
   const formBackground = useColorModeValue("gray.100", "gray.700");
 
   const search = () => {
     const regex: RegExp = RegExp(value);
-    console.log(ThaiWordlist.filter((word: string) => word.match(regex)));
+    setResults(ThaiWordlist.filter((word: string) => regex.test(word)));
+
+    // console.log(ThaiWordlist.filter((word: string) => word.match(regex)));
     // console.log(ThaiWordlist.filter((word: string) => word.includes(value)));
   };
 
@@ -66,6 +69,7 @@ const Home: NextPage = () => {
           </Button>
         </Flex>
       </Flex>
+      {results.length > 0 && (results.map((result: string) => <p>{result}</p>))}
 
       {/* <footer className={styles.footer}>
         <a
