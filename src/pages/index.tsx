@@ -27,16 +27,34 @@ import ThaiWordlist from "../common/thaidict.json";
 const Home: NextPage = () => {
   const [value, setValue] = useState<string>("");
   const [results, setResults] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const { colorMode, toggleColorMode } = useColorMode();
   const formBackground = useColorModeValue("gray.100", "gray.700");
 
   const search = () => {
+    setIsLoading(true);
     const regex: RegExp = RegExp(value);
     setResults(ThaiWordlist.filter((word: string) => regex.test(word)));
+    setIsLoading(false);
+    setTimeout(scrollDown, 1000);
 
     // console.log(ThaiWordlist.filter((word: string) => word.match(regex)));
     // console.log(ThaiWordlist.filter((word: string) => word.includes(value)));
+  };
+
+  const displayResults = () => {
+    const resultList = results.map((word: string) => (
+      <Text key={word}>{word}</Text>
+    ));
+    return resultList;
+  };
+
+  const scrollDown = () => {
+    window.scrollTo({
+      top: document.documentElement.clientHeight,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -67,7 +85,12 @@ const Home: NextPage = () => {
               }}
             />
           </InputGroup>
-          <Button mb={6} colorScheme="teal" onClick={search}>
+          <Button
+            mb={6}
+            colorScheme="teal"
+            onClick={search}
+            isLoading={isLoading}
+          >
             Search
           </Button>
           <Button onClick={toggleColorMode}>
@@ -78,11 +101,9 @@ const Home: NextPage = () => {
 
       {results.length > 0 && (
         <VStack mb={8}>
-          <Heading mb={6}>พบ {results.length} คำ</Heading>
+          <Heading mb={6} id="test">พบ {results.length.toLocaleString()} คำ</Heading>
           <VStack spacing={2} divider={<StackDivider />}>
-            {results.map((result: string) => (
-              <Text key={result}>{result}</Text>
-            ))}
+            {displayResults()}
           </VStack>
           <VStack spacing={6}>
             <ScrollButton />
