@@ -20,6 +20,7 @@ import {
 } from "@chakra-ui/react";
 
 import * as Icon from "react-feather";
+import CountUp from "react-countup";
 
 import ScrollButton from "../components/ScrollButton";
 import ThaiWordlist from "../common/thaidict.json";
@@ -103,7 +104,7 @@ const Home: NextPage = () => {
       {results.length > 0 && (
         <VStack mb={8} minHeight="65vh">
           <Heading mb={6} id="test">
-            พบ {results.length.toLocaleString()} คำ
+            พบ <CountUp end={results.length} separator="," duration={2} /> คำ
           </Heading>
           <VStack spacing={2} divider={<StackDivider />}>
             {displayResults()}
