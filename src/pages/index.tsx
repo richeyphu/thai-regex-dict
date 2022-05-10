@@ -45,6 +45,9 @@ const Home: NextPage = () => {
   };
 
   const displayResults = () => {
+    document
+      .getElementById("_results")
+      ?.removeChild(document.getElementById("_results")!.firstChild!);
     const len = results.length;
     const resultList = results
       .slice(0, len >= 1000 ? 1000 : len)
