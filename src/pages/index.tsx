@@ -8,9 +8,11 @@ import {
   Button,
   Flex,
   Heading,
+  IconButton,
   Input,
   InputGroup,
   InputLeftElement,
+  VStack,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -78,14 +80,18 @@ const Home: NextPage = () => {
           {results.map((result: string) => (
             <p key={result}>{result}</p>
           ))}
-          <ScrollButton />
-          <Flex justifyContent="center" mt={6}>
-            <Icon.GitHub
+          <VStack spacing={4}>
+            <ScrollButton />
+            <IconButton
+              aria-label="Search database"
+              icon={<Icon.GitHub />}
               onClick={() => {
                 window.open("https://github.com/richeyphu/thai-regex-dict");
               }}
+              mt={6}
+              variant="ghost"
             />
-          </Flex>
+          </VStack>
         </div>
       )}
     </div>
