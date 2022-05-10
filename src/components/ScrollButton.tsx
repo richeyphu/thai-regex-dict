@@ -33,7 +33,7 @@ const ScrollButton = () => {
     //   />
     // </Button>
     <IconButton
-      aria-label="Search database"
+      aria-label="Scroll to top"
       icon={<Icon.ArrowUp />}
       onClick={scrollToTop}
       mt={6}
