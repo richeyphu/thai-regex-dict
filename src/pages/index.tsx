@@ -37,22 +37,23 @@ const Home: NextPage = () => {
     const regex: RegExp = RegExp(value);
     setResults(ThaiWordlist.filter((word: string) => regex.test(word)));
     setIsLoading(false);
-    setTimeout(scrollDown, 1000);
+    setTimeout(scrollDown, 500);
 
     // console.log(ThaiWordlist.filter((word: string) => word.match(regex)));
     // console.log(ThaiWordlist.filter((word: string) => word.includes(value)));
   };
 
   const displayResults = () => {
-    const resultList = results.map((word: string) => (
-      <Text key={word}>{word}</Text>
-    ));
+    const len = results.length;
+    const resultList = results
+      .slice(0, len >= 1000 ? 1000 : len)
+      .map((word: string) => <Text key={word}>{word}</Text>);
     return resultList;
   };
 
   const scrollDown = () => {
     window.scrollTo({
-      top: document.documentElement.clientHeight,
+      top: document.documentElement.clientHeight * 0.95,
       behavior: "smooth",
     });
   };
@@ -100,8 +101,10 @@ const Home: NextPage = () => {
       </Flex>
 
       {results.length > 0 && (
-        <VStack mb={8}>
-          <Heading mb={6} id="test">พบ {results.length.toLocaleString()} คำ</Heading>
+        <VStack mb={8} minHeight="65vh">
+          <Heading mb={6} id="test">
+            พบ {results.length.toLocaleString()} คำ
+          </Heading>
           <VStack spacing={2} divider={<StackDivider />}>
             {displayResults()}
           </VStack>
