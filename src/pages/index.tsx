@@ -12,6 +12,8 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Text,
+  StackDivider,
   VStack,
   useColorMode,
   useColorModeValue,
@@ -75,24 +77,25 @@ const Home: NextPage = () => {
       </Flex>
 
       {results.length > 0 && (
-        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+        <VStack mb={8}>
           <Heading mb={6}>พบ {results.length} คำ</Heading>
-          {results.map((result: string) => (
-            <p key={result}>{result}</p>
-          ))}
-          <VStack spacing={4}>
+          <VStack spacing={2} divider={<StackDivider />}>
+            {results.map((result: string) => (
+              <Text key={result}>{result}</Text>
+            ))}
+          </VStack>
+          <VStack spacing={6}>
             <ScrollButton />
             <IconButton
-              aria-label="Search database"
+              aria-label="GitHub"
               icon={<Icon.GitHub />}
               onClick={() => {
                 window.open("https://github.com/richeyphu/thai-regex-dict");
               }}
-              mt={6}
               variant="ghost"
             />
           </VStack>
-        </div>
+        </VStack>
       )}
     </div>
   );
