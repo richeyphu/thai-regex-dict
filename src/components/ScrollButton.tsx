@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 import * as Icon from "react-feather";
 
 const ScrollButton = () => {
@@ -26,12 +26,18 @@ const ScrollButton = () => {
   window.addEventListener("scroll", toggleVisible);
 
   return (
-    <Button mt={6}>
-      <Icon.ArrowUp
-        onClick={scrollToTop}
-        style={{ display: visible ? "inline" : "none" }}
-      />
-    </Button>
+    // <Button mt={6}>
+    //   <Icon.ArrowUp
+    //     onClick={scrollToTop}
+    //     style={{ display: visible ? "inline" : "none" }}
+    //   />
+    // </Button>
+    <IconButton
+      aria-label="Search database"
+      icon={<Icon.ArrowUp />}
+      onClick={scrollToTop}
+      mt={6}
+    />
   );
 };
 
