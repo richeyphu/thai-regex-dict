@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -65,10 +65,10 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Thai Regex Dict</title>
+        <title>Thai Regex Dict | พจนานุกรมนิพจน์ปรกติ</title>
         <meta
           name="description"
-          content="Thai Regex Dictionary | พจนานุกรมนิพจน์ปรกติ"
+          content="Thai Regex Dictionary - พจนานุกรมนิพจน์ปรกติ"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -89,10 +89,10 @@ const Home: NextPage = () => {
               mb={3}
               type="text"
               value={value}
-              onChange={(e) => {
+              onChange={(e: { currentTarget: { value: SetStateAction<string>; }; }) => {
                 setValue(e.currentTarget.value);
               }}
-              onKeyPress={(e) => {
+              onKeyPress={(e: { key: string; }) => {
                 if (e.key === "Enter") {
                   search();
                 }
