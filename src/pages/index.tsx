@@ -22,7 +22,7 @@ import {
 import * as Icon from "react-feather";
 import CountUp from "react-countup";
 
-import ScrollButton from "../components/ScrollButton";
+import { ScrollButton } from "../components";
 import ThaiWordlist from "../common/thaidict.json";
 
 const Home: NextPage = () => {
