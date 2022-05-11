@@ -22,7 +22,7 @@ import {
 import * as Icon from "react-feather";
 import CountUp from "react-countup";
 
-import { ScrollButton, NavBar } from "../components";
+import { ScrollButton, NavBar, KofiWidget } from "../components";
 import ThaiWordlist from "../common/thaidict.json";
 
 const Home: NextPage = () => {
@@ -74,6 +74,7 @@ const Home: NextPage = () => {
       </Head>
 
       <NavBar />
+      <KofiWidget />
 
       <Flex height="100vh" alignItems="center" justifyContent="center">
         <Flex direction="column" background={formBackground} p={12} rounded={6}>
@@ -89,10 +90,12 @@ const Home: NextPage = () => {
               mb={3}
               type="text"
               value={value}
-              onChange={(e: { currentTarget: { value: SetStateAction<string>; }; }) => {
+              onChange={(e: {
+                currentTarget: { value: SetStateAction<string> };
+              }) => {
                 setValue(e.currentTarget.value);
               }}
-              onKeyPress={(e: { key: string; }) => {
+              onKeyPress={(e: { key: string }) => {
                 if (e.key === "Enter") {
                   search();
                 }
