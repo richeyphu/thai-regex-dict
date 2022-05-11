@@ -22,7 +22,7 @@ import {
 import * as Icon from "react-feather";
 import CountUp from "react-countup";
 
-import { ScrollButton } from "../components";
+import { ScrollButton, NavBar } from "../components";
 import ThaiWordlist from "../common/thaidict.json";
 
 const Home: NextPage = () => {
@@ -73,9 +73,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <NavBar />
+
       <Flex height="100vh" alignItems="center" justifyContent="center">
         <Flex direction="column" background={formBackground} p={12} rounded={6}>
-          <Heading mb={6}>Thai Regex Dict</Heading>
+          <Heading textAlign="center" mb={6}>
+            Thai Regex Dict
+          </Heading>
           <InputGroup>
             <InputLeftElement pointerEvents="none">
               <Icon.Search />
