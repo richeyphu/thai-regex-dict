@@ -1,4 +1,9 @@
 # thai-regex-dict
+[![Website](https://img.shields.io/website?url=https://thai-regex-dict.vercel.app/)](https://thai-regex-dict.vercel.app/)
+[![Vercel](https://vercelbadge.vercel.app/api/richeyphu/thai-regex-dict)](https://thai-regex-dict.vercel.app/)
+[![GitHub issues](https://img.shields.io/github/issues/richeyphu/thai-regex-dict)](https://github.com/TNI-Cybersec/tni-cybersec.github.io/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/richeyphu/thai-regex-dict)](https://github.com/TNI-Cybersec/tni-cybersec.github.io/pulls)
+
 A simple Thai Regex Dictionary built with Next.js and TypeScript.
 
 ---
