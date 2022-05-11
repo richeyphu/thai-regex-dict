@@ -8,7 +8,7 @@ const NavBar = (props: Props) => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Flex position="absolute" top={5} right={5}>
+    <Flex position="fixed" top={5} right={5}>
       <HStack spacing={0}>
         <IconButton
           aria-label="GitHub"
