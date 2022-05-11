@@ -27,7 +27,7 @@ import ThaiWordlist from "../common/thaidict.json";
 
 const Home: NextPage = () => {
   const [value, setValue] = useState<string>("");
-  const [results, setResults] = useState<string[]>([]);
+  const [results, setResults] = useState<string[]>(null!);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const { colorMode, toggleColorMode } = useColorMode();
@@ -116,17 +116,23 @@ const Home: NextPage = () => {
         </Flex>
       </Flex>
 
-      {results.length > 0 && (
+      {!!results && (
         <VStack mb={16} minHeight="65vh">
           <Heading mb={6} id="test">
-            พบ{" "}
-            <CountUp
-              end={results.length}
-              separator=","
-              duration={2}
-              enableScrollSpy={true}
-            />{" "}
-            คำ
+            {results.length > 0 ? (
+              <>
+                พบ{" "}
+                <CountUp
+                  end={results.length}
+                  separator=","
+                  duration={2}
+                  enableScrollSpy={true}
+                />{" "}
+                คำ
+              </>
+            ) : (
+              "ไม่พบผลลัพธ์"
+            )}
           </Heading>
           <VStack spacing={2} divider={<StackDivider />}>
             {displayResults()}
