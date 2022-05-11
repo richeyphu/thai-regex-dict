@@ -1,11 +1,17 @@
-import { extendTheme, theme as base } from "@chakra-ui/react";
+import { extendTheme, theme as base, type ThemeConfig } from "@chakra-ui/react";
 
-const theme = extendTheme({
+const config: ThemeConfig = {
   initialColorMode: "dark",
   useSystemColorMode: true,
-  fonts: {
-    heading: `Noto Sans Thai, ${base.fonts?.heading}`,
-    body: `Noto Sans Thai, ${base.fonts?.body}`,
+};
+
+const theme = extendTheme({
+  config,
+  ...{
+    fonts: {
+      heading: `Noto Sans Thai, ${base.fonts?.heading}`,
+      body: `Noto Sans Thai, ${base.fonts?.body}`,
+    },
   },
 });
 
