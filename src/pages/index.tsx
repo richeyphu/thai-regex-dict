@@ -88,6 +88,11 @@ const Home: NextPage = () => {
               onChange={(e) => {
                 setValue(e.currentTarget.value);
               }}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  search();
+                }
+              }}
             />
           </InputGroup>
           <Button
@@ -107,7 +112,14 @@ const Home: NextPage = () => {
       {results.length > 0 && (
         <VStack mb={8} minHeight="65vh">
           <Heading mb={6} id="test">
-            พบ <CountUp end={results.length} separator="," duration={2} /> คำ
+            พบ{" "}
+            <CountUp
+              end={results.length}
+              separator=","
+              duration={2}
+              enableScrollSpy={true}
+            />{" "}
+            คำ
           </Heading>
           <VStack spacing={2} divider={<StackDivider />}>
             {displayResults()}
