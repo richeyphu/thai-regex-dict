@@ -117,7 +117,7 @@ const Home: NextPage = () => {
       </Flex>
 
       {results.length > 0 && (
-        <VStack mb={8} minHeight="65vh">
+        <VStack mb={16} minHeight="65vh">
           <Heading mb={6} id="test">
             พบ{" "}
             <CountUp
