@@ -30,7 +30,6 @@ const Home: NextPage = () => {
   const [results, setResults] = useState<string[]>(null!);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const { colorMode, toggleColorMode } = useColorMode();
   const formBackground = useColorModeValue("gray.100", "gray.700");
 
   const search = () => {
@@ -77,10 +76,17 @@ const Home: NextPage = () => {
       <KofiWidget />
 
       <Flex height="100vh" alignItems="center" justifyContent="center">
-        <Flex direction="column" background={formBackground} p={12} rounded={6}>
-          <Heading textAlign="center" mb={6}>
-            Thai Regex Dict
-          </Heading>
+        <Flex
+          direction="column"
+          background={formBackground}
+          p={12}
+          rounded={6}
+          minWidth={{ base: "30%" }}
+        >
+          <Heading textAlign="center">Thai Regex Dict</Heading>
+          <Text textAlign="center" mb={8}>
+            พจนานุกรมนิพจน์ปรกติ
+          </Text>
           <InputGroup>
             <InputLeftElement pointerEvents="none">
               <Icon.Search />
@@ -102,16 +108,8 @@ const Home: NextPage = () => {
               }}
             />
           </InputGroup>
-          <Button
-            mb={6}
-            colorScheme="teal"
-            onClick={search}
-            isLoading={isLoading}
-          >
+          <Button colorScheme="teal" onClick={search} isLoading={isLoading}>
             Search
-          </Button>
-          <Button onClick={toggleColorMode}>
-            {colorMode === "dark" ? <Icon.Sun /> : <Icon.Moon />}
           </Button>
         </Flex>
       </Flex>
