@@ -14,6 +14,7 @@ import {
   InputLeftElement,
   Text,
   StackDivider,
+  Spacer,
   VStack,
   useColorMode,
   useColorModeValue,
@@ -116,7 +117,7 @@ const Home: NextPage = () => {
 
       {!!results && (
         <VStack mb={16} minHeight="65vh">
-          <Heading mb={6} id="test">
+          <Heading mb={6} textAlign="center" id="test">
             {results.length > 0 ? (
               <>
                 พบ{" "}
@@ -129,7 +130,11 @@ const Home: NextPage = () => {
                 คำ
               </>
             ) : (
-              "ไม่พบผลลัพธ์"
+              <>
+                ไม่พบผลลัพธ์
+                <Spacer mb={6} />
+                {"｡ﾟ･ (>﹏<) ･ﾟ｡"}
+              </>
             )}
           </Heading>
           <VStack spacing={2} divider={<StackDivider />}>
