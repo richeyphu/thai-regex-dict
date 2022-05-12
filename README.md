@@ -1,8 +1,13 @@
 # thai-regex-dict
+[![Website](https://img.shields.io/website?url=https://thai-regex-dict.vercel.app/)](https://thai-regex-dict.vercel.app/)
+[![Vercel](https://vercelbadge.vercel.app/api/richeyphu/thai-regex-dict)](https://thai-regex-dict.vercel.app/)
+[![GitHub issues](https://img.shields.io/github/issues/richeyphu/thai-regex-dict)](https://github.com/TNI-Cybersec/tni-cybersec.github.io/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/richeyphu/thai-regex-dict)](https://github.com/TNI-Cybersec/tni-cybersec.github.io/pulls)
+
 A simple Thai Regex Dictionary built with Next.js and TypeScript.
 
----
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+<!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
@@ -36,3 +41,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+ -->
