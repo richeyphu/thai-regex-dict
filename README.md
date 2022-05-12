@@ -4,6 +4,11 @@
 [![GitHub issues](https://img.shields.io/github/issues/richeyphu/thai-regex-dict)](https://github.com/TNI-Cybersec/tni-cybersec.github.io/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/richeyphu/thai-regex-dict)](https://github.com/TNI-Cybersec/tni-cybersec.github.io/pulls)
 
+![cover](public/img/cover.png)
+<p align="center">
+  <i><b>Thai Regex Dict</b> - เมื่อสัมผัสต้องมาก่อนความหมาย</i>
+</p>
+
 A simple Thai Regex Dictionary built with Next.js and TypeScript.
 
 
