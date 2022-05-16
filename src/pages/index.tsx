@@ -24,6 +24,7 @@ import * as Icon from "react-feather";
 import CountUp from "react-countup";
 
 import { ScrollButton, NavBar, KofiWidget } from "../components";
+import { countSearch } from "../utils";
 import ThaiWordlist from "../common/thaidict.json";
 
 const Home: NextPage = () => {
@@ -37,6 +38,7 @@ const Home: NextPage = () => {
     setIsLoading(true);
     const regex: RegExp = RegExp(value);
     setResults(ThaiWordlist.filter((word: string) => regex.test(word)));
+    countSearch();
     setIsLoading(false);
     setTimeout(scrollDown, 500);
 
@@ -74,6 +76,10 @@ const Home: NextPage = () => {
         <meta
           name="theme-color"
           content={useColorMode().colorMode === "dark" ? "#1a202c" : "#fff"}
+        />
+        <script
+          async
+          src="https://api.countapi.xyz/hit/thai-regex-dict-web/visits"
         />
       </Head>
 
