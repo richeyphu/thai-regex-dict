@@ -72,7 +72,7 @@ const Home: NextPage = () => {
           name="description"
           content="Thai Regex Dictionary - พจนานุกรมนิพจน์ปรกติ"
         />
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
         <meta
           name="theme-color"
           content={useColorMode().colorMode === "dark" ? "#1a202c" : "#fff"}

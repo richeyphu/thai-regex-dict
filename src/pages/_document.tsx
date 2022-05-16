@@ -14,7 +14,9 @@ export default class Document extends NextDocument {
       <Html lang="th">
         <Head>
           <link rel="manifest" href="/manifest.json" />
-          <link rel="apple-touch-icon" href="/icon.png"></link>
+          <link rel="icon" type="image/png" href="/icon-192x192.png" />
+          <link rel="shortcut icon" href="/favicon.ico" />
+          <link rel="apple-touch-icon" href="/icon-192x192.png" />
           {/* <meta name="theme-color" content="#fff" /> */}
           <meta property="og:url" content={url} />
           <meta property="og:type" content="website" />
