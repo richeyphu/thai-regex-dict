@@ -3,7 +3,7 @@ import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 import theme from "../theme";
 
 const url: string = "https://thai-regex-dict.vercel.app";
-const title: string = "Thai Regex Dictionary | พจนานุกรมนิพจน์ปรกติ";
+const title: string = "Thai Regex Dict | พจนานุกรมนิพจน์ปรกติ";
 const description: string = "Thai Regex Dictionary - พจนานุกรมนิพจน์ปรกติ";
 const imageUrl: string =
   "https://raw.githubusercontent.com/richeyphu/thai-regex-dict/main/public/img/cover.png";
