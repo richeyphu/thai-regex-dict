@@ -37,7 +37,11 @@ const Home: NextPage = () => {
   const search = () => {
     setIsLoading(true);
     const regex: RegExp = RegExp(value);
-    setResults(ThaiWordlist.filter((word: string) => regex.test(word)));
+    setResults(
+      Array.from(new Set(ThaiWordlist)).filter((word: string) =>
+        regex.test(word)
+      )
+    );
     countSearch();
     setIsLoading(false);
     setTimeout(scrollDown, 500);
@@ -47,9 +51,7 @@ const Home: NextPage = () => {
   };
 
   const displayResults = () => {
-    document
-      .getElementById("_results")
-      ?.removeChild(document.getElementById("_results")!.firstChild!);
+    // document.getElementById("_results")?.removeChild(document.getElementById("_results")!.firstChild!);
     const len = results.length;
     const resultList = results
       .slice(0, len >= 1000 ? 1000 : len)
@@ -127,7 +129,7 @@ const Home: NextPage = () => {
 
       {!!results && (
         <VStack mb={16} minHeight="65vh">
-          <Heading mb={6} textAlign="center" id="test">
+          <Heading mb={6} textAlign="center">
             {results.length > 0 ? (
               <>
                 พบ{" "}
