@@ -9,7 +9,9 @@
 ![cover](public/img/cover.png)
 
 <p align="center">
-  <i><b>Thai Regex Dict</b> - เมื่อสัมผัสต้องมาก่อนความหมาย</i>
+  <b>Thai Regex Dict | พจนานุกรมนิพจน์ปรกติ</b>
+  <br/>
+  <i>“เมื่อสัมผัสต้องมาก่อนความหมาย”</i>
 </p>
 <p align="center">
 A simple Thai Regex Dictionary <a href="https://web.dev/progressive-web-apps/">PWA</a> built with <a href="https://github.com/vercel/next.js">Next.js</a>, <a href="https://github.com/chakra-ui/chakra-ui">Chakra UI</a> and ❤️
