@@ -18,6 +18,7 @@ import {
   VStack,
   useColorMode,
   useColorModeValue,
+  useToast,
 } from "@chakra-ui/react";
 
 import * as Icon from "react-feather";
@@ -33,18 +34,31 @@ const Home: NextPage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const formBackground = useColorModeValue("gray.100", "gray.700");
+  const toast = useToast();
 
   const search = () => {
     setIsLoading(true);
-    const regex: RegExp = RegExp(value);
-    setResults(
-      Array.from(new Set(ThaiWordlist)).filter((word: string) =>
-        regex.test(word)
-      )
-    );
-    countSearch();
+    try {
+      const regex: RegExp = RegExp(value);
+      setResults(
+        Array.from(new Set(ThaiWordlist)).filter((word: string) =>
+          regex.test(word)
+        )
+      );
+      countSearch();
+      setTimeout(scrollDown, 500);
+    } catch (e) {
+      if (e instanceof Error) {
+        toast({
+          description: e.message,
+          status: "error",
+          position: "bottom",
+          isClosable: true,
+        });
+      }
+      // console.error(e);
+    }
     setIsLoading(false);
-    setTimeout(scrollDown, 500);
 
     // console.log(ThaiWordlist.filter((word: string) => word.match(regex)));
     // console.log(ThaiWordlist.filter((word: string) => word.includes(value)));
