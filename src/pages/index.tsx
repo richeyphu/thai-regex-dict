@@ -38,6 +38,7 @@ const Home: NextPage = () => {
 
   const search = () => {
     setIsLoading(true);
+
     try {
       const regex: RegExp = RegExp(value);
       setResults(
@@ -47,17 +48,16 @@ const Home: NextPage = () => {
       );
       countSearch();
       setTimeout(scrollDown, 500);
-    } catch (e) {
-      if (e instanceof Error) {
-        toast({
-          description: e.message,
-          status: "error",
-          position: "bottom",
-          isClosable: true,
-        });
-      }
+    } catch (e: any) {
+      toast({
+        description: e.message,
+        status: "error",
+        position: "bottom",
+        isClosable: true,
+      });
       // console.error(e);
     }
+
     setIsLoading(false);
 
     // console.log(ThaiWordlist.filter((word: string) => word.match(regex)));
