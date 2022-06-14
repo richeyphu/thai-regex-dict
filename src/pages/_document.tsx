@@ -1,6 +1,6 @@
 import { ColorModeScript } from "@chakra-ui/react";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
-import theme from "../theme";
+import theme from "@theme";
 
 const url: string = "https://thai-regex-dict.vercel.app";
 const title: string = "Thai Regex Dict | พจนานุกรมนิพจน์ปรกติ";
