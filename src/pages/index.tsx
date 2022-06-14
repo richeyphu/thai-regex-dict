@@ -50,6 +50,7 @@ const Home: NextPage = () => {
       setTimeout(scrollDown, 500);
     } catch (e: any) {
       toast({
+        title: e.name,
         description: e.message,
         status: "error",
         position: "bottom",
