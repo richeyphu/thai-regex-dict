@@ -13,7 +13,26 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": "./",
+    // custom paths
+    "paths": {
+      // pages
+      "@pages": ["src/pages/index.tsx"],
+      "@pages/*": ["src/pages/*"],
+      // style
+      "@styles": ["src/styles/index.ts"],
+      "@styles/*": ["src/styles/*"],
+      // common
+      "@common": ["src/common/index.ts"],
+      "@common/*": ["src/common/*"],
+      "@components": ["src/components/index.ts"],
+      "@components/*": ["src/components/*"],
+      "@theme": ["src/theme/index.ts"],
+      "@theme/*": ["src/theme/*"],
+      "@utils": ["src/utils/index.ts"],
+      "@utils/*": ["src/utils/*"],
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

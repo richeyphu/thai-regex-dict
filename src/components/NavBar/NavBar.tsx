@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import * as Icon from "react-feather";
 
-import { AboutModal } from "../../components";
+import { AboutModal } from "@components";
 
 type Props = {};
 

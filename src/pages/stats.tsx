@@ -14,7 +14,7 @@ import axios from "axios";
 import CountUp from "react-countup";
 import * as Icon from "react-feather";
 
-import { NavBar, KofiWidget } from "../components";
+import { NavBar, KofiWidget } from "@components";
 
 const Stats: NextPage = () => {
   const [visits, setVisits] = useState<number>(0);
@@ -38,7 +38,7 @@ const Stats: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Thai Regex Dict | พจนานุกรมนิพจน์ปรกติ - Stats</title>
+        <title>Thai Regex Dict | พจนานุกรมนิพจน์ปรกติ - สถิติการใช้งาน</title>
         <meta
           name="description"
           content="สถิติการใช้งาน Thai Regex Dictionary - พจนานุกรมนิพจน์ปรกติ"

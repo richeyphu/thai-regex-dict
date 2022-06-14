@@ -2,7 +2,7 @@ import { SetStateAction, useState } from "react";
 
 import type { NextPage } from "next";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "@styles/Home.module.css";
 
 import {
   Button,
@@ -24,9 +24,9 @@ import {
 import * as Icon from "react-feather";
 import CountUp from "react-countup";
 
-import { ScrollButton, NavBar, KofiWidget } from "../components";
-import { countSearch } from "../utils";
-import ThaiWordlist from "../common/thaidict.json";
+import { ScrollButton, NavBar, KofiWidget } from "@components";
+import { countSearch } from "@utils";
+import ThaiWordlist from "@common/thaidict.json";
 
 const Home: NextPage = () => {
   const [value, setValue] = useState<string>("");
