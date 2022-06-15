@@ -46,16 +46,18 @@ const NavBar = (props: Props) => {
         </HStack>
         <AboutModal onClose={onClose} isOpen={isOpen} />
       </Flex>
-      <Flex position="fixed" bottom={5} right={5}>
-        <IconButton
-          aria-label="Switch Mode"
-          icon={router.asPath === "/" ? <Icon.Zap /> : <Icon.ZapOff />}
-          onClick={() => {
-            router.asPath === "/" ? router.push("/beta") : router.push("/");
-          }}
-          variant="ghost"
-        />
-      </Flex>
+      {(router.pathname === "/" || router.pathname === "/beta") && (
+        <Flex position="fixed" bottom={5} right={5}>
+          <IconButton
+            aria-label="Switch Mode"
+            icon={router.pathname === "/" ? <Icon.Zap /> : <Icon.ZapOff />}
+            onClick={() => {
+              router.pathname === "/" ? router.push("/beta") : router.push("/");
+            }}
+            variant="ghost"
+          />
+        </Flex>
+      )}
     </>
   );
 };
