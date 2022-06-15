@@ -105,7 +105,7 @@ const Home: NextPage = () => {
         <Flex
           direction="column"
           background={formBackground}
-          p={12}
+          p={{ base: 8, md: 12 }}
           rounded={6}
           minWidth={{
             base: "100%",
