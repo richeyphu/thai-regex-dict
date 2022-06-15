@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 import {
   Flex,
   HStack,
@@ -16,10 +17,13 @@ const NavBar = (props: Props) => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const router = useRouter();
+
   return (
-    <Flex position="fixed" top={5} right={5}>
-      <HStack spacing={0}>
-        {/* <IconButton
+    <>
+      <Flex position="fixed" top={5} right={5}>
+        <HStack spacing={0}>
+          {/* <IconButton
           aria-label="GitHub"
           icon={<Icon.GitHub />}
           onClick={() => {
@@ -27,21 +31,32 @@ const NavBar = (props: Props) => {
           }}
           variant="ghost"
         /> */}
+          <IconButton
+            aria-label="Change Theme"
+            icon={colorMode === "dark" ? <Icon.Sun /> : <Icon.Moon />}
+            onClick={toggleColorMode}
+            variant="ghost"
+          />
+          <IconButton
+            aria-label="About"
+            icon={<Icon.HelpCircle />}
+            onClick={onOpen}
+            variant="ghost"
+          />
+        </HStack>
+        <AboutModal onClose={onClose} isOpen={isOpen} />
+      </Flex>
+      <Flex position="fixed" bottom={5} right={5}>
         <IconButton
-          aria-label="Change Theme"
-          icon={colorMode === "dark" ? <Icon.Sun /> : <Icon.Moon />}
-          onClick={toggleColorMode}
+          aria-label="Switch Mode"
+          icon={router.asPath === "/" ? <Icon.Zap /> : <Icon.ZapOff />}
+          onClick={() => {
+            router.asPath === "/" ? router.push("/beta") : router.push("/");
+          }}
           variant="ghost"
         />
-        <IconButton
-          aria-label="About"
-          icon={<Icon.HelpCircle />}
-          onClick={onOpen}
-          variant="ghost"
-        />
-      </HStack>
-      <AboutModal onClose={onClose} isOpen={isOpen} />
-    </Flex>
+      </Flex>
+    </>
   );
 };
 
