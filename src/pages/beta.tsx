@@ -17,6 +17,7 @@ import {
   StackDivider,
   Spacer,
   VStack,
+  SlideFade,
   useColorMode,
   useColorModeValue,
   useToast,
@@ -94,45 +95,47 @@ const Home: NextPage = () => {
       <NavBar />
       <KofiWidget />
 
-      <Flex justifyContent="center">
-        <Flex
-          direction="column"
-          background={formBackground}
-          p={8}
-          rounded={6}
-          mt={16}
-          minWidth={{ sm: "100%", md: "60%", lg: "50%", xl: "40%" }}
-        >
-          <Heading textAlign="center">Thai Regex Dict</Heading>
-          <Text textAlign="center" mb={8}>
-            พจนานุกรมนิพจน์ปรกติ <Badge colorScheme="purple">Beta</Badge>
-          </Text>
-          <InputGroup>
-            <InputLeftElement pointerEvents="none">
-              <Icon.Search />
-            </InputLeftElement>
-            <Input
-              placeholder="ค้นหา..."
-              mb={1}
-              type="text"
-              value={value}
-              onChange={(e: {
-                currentTarget: { value: SetStateAction<string> };
-              }) => {
-                setValue(e.currentTarget.value);
-              }}
-              onKeyPress={(e: { key: string }) => {
-                if (e.key === "Enter") {
-                  search();
-                }
-              }}
-            />
-          </InputGroup>
-          {/* <Button colorScheme="teal" onClick={search} isLoading={isLoading}>
+      <SlideFade in={true} offsetY={250}>
+        <Flex justifyContent="center">
+          <Flex
+            direction="column"
+            background={formBackground}
+            p={8}
+            rounded={6}
+            mt={16}
+            minWidth={{ sm: "100%", md: "60%", lg: "50%", xl: "40%" }}
+          >
+            <Heading textAlign="center">Thai Regex Dict</Heading>
+            <Text textAlign="center" mb={8}>
+              พจนานุกรมนิพจน์ปรกติ <Badge colorScheme="purple">Beta</Badge>
+            </Text>
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <Icon.Search />
+              </InputLeftElement>
+              <Input
+                placeholder="ค้นหา..."
+                mb={1}
+                type="text"
+                value={value}
+                onChange={(e: {
+                  currentTarget: { value: SetStateAction<string> };
+                }) => {
+                  setValue(e.currentTarget.value);
+                }}
+                onKeyPress={(e: { key: string }) => {
+                  if (e.key === "Enter") {
+                    search();
+                  }
+                }}
+              />
+            </InputGroup>
+            {/* <Button colorScheme="teal" onClick={search} isLoading={isLoading}>
             Search
           </Button> */}
+          </Flex>
         </Flex>
-      </Flex>
+      </SlideFade>
 
       {!!value && !!results && (
         <VStack mt={14} mb={16} minHeight="65vh">

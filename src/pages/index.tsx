@@ -16,6 +16,7 @@ import {
   StackDivider,
   Spacer,
   VStack,
+  SlideFade,
   useColorMode,
   useColorModeValue,
   useToast,
@@ -101,50 +102,52 @@ const Home: NextPage = () => {
       <NavBar />
       <KofiWidget />
 
-      <Flex height="100vh" alignItems="center" justifyContent="center">
-        <Flex
-          direction="column"
-          background={formBackground}
-          p={{ base: 8, md: 12 }}
-          rounded={6}
-          minWidth={{
-            base: "100%",
-            sm: "90%",
-            md: "60%",
-            lg: "50%",
-            xl: "40%",
-          }}
-        >
-          <Heading textAlign="center">Thai Regex Dict</Heading>
-          <Text textAlign="center" mb={8}>
-            พจนานุกรมนิพจน์ปรกติ
-          </Text>
-          <InputGroup>
-            <InputLeftElement pointerEvents="none">
-              <Icon.Search />
-            </InputLeftElement>
-            <Input
-              placeholder="ค้นหา..."
-              mb={3}
-              type="text"
-              value={value}
-              onChange={(e: {
-                currentTarget: { value: SetStateAction<string> };
-              }) => {
-                setValue(e.currentTarget.value);
-              }}
-              onKeyPress={(e: { key: string }) => {
-                if (e.key === "Enter") {
-                  search();
-                }
-              }}
-            />
-          </InputGroup>
-          <Button colorScheme="teal" onClick={search} isLoading={isLoading}>
-            Search
-          </Button>
+      <SlideFade in={true} offsetY={-250}>
+        <Flex height="100vh" alignItems="center" justifyContent="center">
+          <Flex
+            direction="column"
+            background={formBackground}
+            p={{ base: 8, md: 12 }}
+            rounded={6}
+            minWidth={{
+              base: "100%",
+              sm: "90%",
+              md: "60%",
+              lg: "50%",
+              xl: "40%",
+            }}
+          >
+            <Heading textAlign="center">Thai Regex Dict</Heading>
+            <Text textAlign="center" mb={8}>
+              พจนานุกรมนิพจน์ปรกติ
+            </Text>
+            <InputGroup>
+              <InputLeftElement pointerEvents="none">
+                <Icon.Search />
+              </InputLeftElement>
+              <Input
+                placeholder="ค้นหา..."
+                mb={3}
+                type="text"
+                value={value}
+                onChange={(e: {
+                  currentTarget: { value: SetStateAction<string> };
+                }) => {
+                  setValue(e.currentTarget.value);
+                }}
+                onKeyPress={(e: { key: string }) => {
+                  if (e.key === "Enter") {
+                    search();
+                  }
+                }}
+              />
+            </InputGroup>
+            <Button colorScheme="teal" onClick={search} isLoading={isLoading}>
+              Search
+            </Button>
+          </Flex>
         </Flex>
-      </Flex>
+      </SlideFade>
 
       {!!results && (
         <VStack mb={16} minHeight="65vh">
