@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import {
   Flex,
   Heading,
@@ -19,6 +20,8 @@ import { NavBar, KofiWidget } from "@components";
 const Stats: NextPage = () => {
   const [visits, setVisits] = useState<number>(0);
   const [searches, setSearches] = useState<number>(0);
+
+  const router = useRouter();
 
   useEffect(() => {
     axios
@@ -83,9 +86,7 @@ const Stats: NextPage = () => {
           <IconButton
             aria-label="Home"
             icon={<Icon.Home />}
-            onClick={() => {
-              location.href = "/";
-            }}
+            onClick={() => router.push("/")}
             variant="ghost"
           />
         </VStack>
