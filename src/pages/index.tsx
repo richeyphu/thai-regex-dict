@@ -28,6 +28,8 @@ import { ScrollButton, NavBar, KofiWidget } from "@components";
 import { countSearch } from "@utils";
 import ThaiWordlist from "@common/thaidict.json";
 
+const Wordlist = Array.from(new Set(ThaiWordlist));
+
 const Home: NextPage = () => {
   const [value, setValue] = useState<string>("");
   const [results, setResults] = useState<string[]>(null!);
@@ -41,11 +43,7 @@ const Home: NextPage = () => {
 
     try {
       const regex: RegExp = RegExp(value);
-      setResults(
-        Array.from(new Set(ThaiWordlist)).filter((word: string) =>
-          regex.test(word)
-        )
-      );
+      setResults(Wordlist.filter((word: string) => regex.test(word)));
       countSearch();
       setTimeout(scrollDown, 500);
     } catch (e: any) {
@@ -109,7 +107,13 @@ const Home: NextPage = () => {
           background={formBackground}
           p={12}
           rounded={6}
-          minWidth={{ base: "30%" }}
+          minWidth={{
+            base: "100%",
+            sm: "90%",
+            md: "60%",
+            lg: "50%",
+            xl: "40%",
+          }}
         >
           <Heading textAlign="center">Thai Regex Dict</Heading>
           <Text textAlign="center" mb={8}>
