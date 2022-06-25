@@ -128,7 +128,7 @@ const Home: NextPage = () => {
               <Input
                 placeholder="ค้นหา..."
                 mb={3}
-                type="text"
+                type="search"
                 value={value}
                 onChange={(e: {
                   currentTarget: { value: SetStateAction<string> };
