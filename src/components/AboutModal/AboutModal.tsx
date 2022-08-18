@@ -1,4 +1,5 @@
 import React from "react";
+import NextLink from "next/link";
 import {
   Button,
   Text,
@@ -43,22 +44,25 @@ const AboutModal = (props: Props) => {
             รองรับการทำงานทั้งในรูปเว็บไซต์และ PWA (Progressive Web App)
           </Text>
           <HStack mt={2} spacing={5}>
-            <Link
-              color="teal.500"
+            <NextLink
               href="https://github.com/richeyphu/thai-regex-dict"
-              isExternal
+              passHref
             >
-              <HStack spacing={1}>
-                <Text>เรียนรู้เพิ่มเติม</Text>
-                <ExternalLink size={18} />
-              </HStack>
-            </Link>
-            <Link color="teal.500" href="/stats">
-              <HStack spacing={1}>
-                <BarChart2 size={18} />
-                <Text>สถิติการใช้งาน</Text>
-              </HStack>
-            </Link>
+              <Link color="teal.500" isExternal>
+                <HStack spacing={1}>
+                  <Text>เรียนรู้เพิ่มเติม</Text>
+                  <ExternalLink size={18} />
+                </HStack>
+              </Link>
+            </NextLink>
+            <NextLink href="/stats" passHref>
+              <Link color="teal.500">
+                <HStack spacing={1}>
+                  <BarChart2 size={18} />
+                  <Text>สถิติการใช้งาน</Text>
+                </HStack>
+              </Link>
+            </NextLink>
           </HStack>
         </ModalBody>
         <ModalFooter>
