@@ -12,7 +12,7 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import * as Icon from "react-feather";
+import { ExternalLink, Info } from "react-feather";
 
 type Props = {
   isOpen: boolean;
@@ -28,7 +28,7 @@ const AboutModal = (props: Props) => {
       <ModalContent width={{ base: "90%" }}>
         <ModalHeader>
           <HStack>
-            <Icon.Info />
+            <Info />
             <Text>เกี่ยวกับ</Text>
           </HStack>
         </ModalHeader>
@@ -49,7 +49,7 @@ const AboutModal = (props: Props) => {
           >
             <HStack mt={2} spacing={1}>
               <Text>เรียนรู้เพิ่มเติม</Text>
-              <Icon.ExternalLink size={18} />
+              <ExternalLink size={18} />
             </HStack>
           </Link>
           {/* <Link

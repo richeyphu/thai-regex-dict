@@ -22,7 +22,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 
-import * as Icon from "react-feather";
+import { Search, GitHub } from "react-feather";
 import CountUp from "react-countup";
 
 import { ScrollButton, NavBar, KofiWidget } from "@components";
@@ -123,7 +123,7 @@ const Home: NextPage = () => {
             </Text>
             <InputGroup>
               <InputLeftElement pointerEvents="none">
-                <Icon.Search />
+                <Search />
               </InputLeftElement>
               <Input
                 placeholder="ค้นหา..."
@@ -178,7 +178,7 @@ const Home: NextPage = () => {
             <ScrollButton />
             <IconButton
               aria-label="GitHub"
-              icon={<Icon.GitHub />}
+              icon={<GitHub />}
               onClick={() => {
                 window.open("https://github.com/richeyphu/thai-regex-dict");
               }}

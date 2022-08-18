@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IconButton } from "@chakra-ui/react";
-import * as Icon from "react-feather";
+import { ArrowUp } from "react-feather";
 
 const ScrollButton = () => {
   const [visible, setVisible] = useState(false);
@@ -27,14 +27,14 @@ const ScrollButton = () => {
 
   return (
     // <Button mt={6}>
-    //   <Icon.ArrowUp
+    //   <ArrowUp
     //     onClick={scrollToTop}
     //     style={{ display: visible ? "inline" : "none" }}
     //   />
     // </Button>
     <IconButton
       aria-label="Scroll to top"
-      icon={<Icon.ArrowUp />}
+      icon={<ArrowUp />}
       onClick={scrollToTop}
       mt={6}
     />

@@ -7,7 +7,7 @@ import {
   useColorMode,
   useDisclosure,
 } from "@chakra-ui/react";
-import * as Icon from "react-feather";
+import { Sun, Moon, HelpCircle, Zap, ZapOff } from "react-feather";
 
 import { AboutModal } from "@components";
 
@@ -33,13 +33,13 @@ const NavBar = (props: Props) => {
         /> */}
           <IconButton
             aria-label="Change Theme"
-            icon={colorMode === "dark" ? <Icon.Sun /> : <Icon.Moon />}
+            icon={colorMode === "dark" ? <Sun /> : <Moon />}
             onClick={toggleColorMode}
             variant="ghost"
           />
           <IconButton
             aria-label="About"
-            icon={<Icon.HelpCircle />}
+            icon={<HelpCircle />}
             onClick={onOpen}
             variant="ghost"
           />
@@ -50,7 +50,7 @@ const NavBar = (props: Props) => {
         <Flex position="fixed" bottom={5} right={5}>
           <IconButton
             aria-label="Switch Mode"
-            icon={router.pathname === "/" ? <Icon.Zap /> : <Icon.ZapOff />}
+            icon={router.pathname === "/" ? <Zap /> : <ZapOff />}
             onClick={() => {
               router.pathname === "/" ? router.push("/beta") : router.push("/");
             }}

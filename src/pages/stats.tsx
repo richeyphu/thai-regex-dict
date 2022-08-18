@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import CountUp from "react-countup";
-import * as Icon from "react-feather";
+import { Home } from "react-feather";
 
 import { NavBar, KofiWidget } from "@components";
 
@@ -85,7 +85,7 @@ const Stats: NextPage = () => {
           <Divider />
           <IconButton
             aria-label="Home"
-            icon={<Icon.Home />}
+            icon={<Home />}
             onClick={() => router.push("/")}
             variant="ghost"
           />
