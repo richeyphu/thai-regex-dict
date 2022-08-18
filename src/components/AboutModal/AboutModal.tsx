@@ -12,7 +12,7 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
-import { ExternalLink, Info } from "react-feather";
+import { ExternalLink, Info, BarChart2 } from "react-feather";
 
 type Props = {
   isOpen: boolean;
@@ -42,26 +42,24 @@ const AboutModal = (props: Props) => {
           <Text>
             รองรับการทำงานทั้งในรูปเว็บไซต์และ PWA (Progressive Web App)
           </Text>
-          <Link
-            color="teal.500"
-            href="https://github.com/richeyphu/thai-regex-dict"
-            isExternal
-          >
-            <HStack mt={2} spacing={1}>
-              <Text>เรียนรู้เพิ่มเติม</Text>
-              <ExternalLink size={18} />
-            </HStack>
-          </Link>
-          {/* <Link
-            color="teal.500"
-            href="https://github.com/richeyphu/thai-regex-dict"
-            isExternal
-          >
-            <HStack mt={2} spacing={1}>
-              <Text>GitHub</Text>
-              <Icon.GitHub size={18} />
-            </HStack>
-          </Link> */}
+          <HStack mt={2} spacing={5}>
+            <Link
+              color="teal.500"
+              href="https://github.com/richeyphu/thai-regex-dict"
+              isExternal
+            >
+              <HStack spacing={1}>
+                <Text>เรียนรู้เพิ่มเติม</Text>
+                <ExternalLink size={18} />
+              </HStack>
+            </Link>
+            <Link color="teal.500" href="/stats">
+              <HStack spacing={1}>
+                <BarChart2 size={18} />
+                <Text>สถิติการใช้งาน</Text>
+              </HStack>
+            </Link>
+          </HStack>
         </ModalBody>
         <ModalFooter>
           <Button onClick={onClose}>ปิด</Button>
