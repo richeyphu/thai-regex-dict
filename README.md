@@ -20,8 +20,8 @@ A simple Thai Regex Dictionary <a href="https://web.dev/progressive-web-apps/">P
 ## Setup
 
 - Clone/fork this repository
-- Install dependencies: `yarn` or `npm install`
-- Run the development server: `yarn dev` or `npm run dev`
+- Install dependencies: `pnpm install`
+- Run the development server: `pnpm dev`
 
 ## Support me
 
