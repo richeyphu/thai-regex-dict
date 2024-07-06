@@ -1,11 +1,8 @@
-import React from "react";
 import { inject } from "@vercel/analytics";
 
-type Props = {};
-
-const Analytics = (props: Props) => {
+const Analytics = () => {
   inject();
-  return <></>;
+  return null;
 };
 
 export default Analytics;
